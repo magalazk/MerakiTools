@@ -6,12 +6,9 @@ from dateutil import parser
 
 
 def graphMerakiTraffic(networkId, serial):
-    tdata = networkStatus.getTrafficStats(networkId,serial)
+    netdata = networkStatus.getTrafficStats(networkId,serial) # returns json formatted meraki api response of network stats
 
     output_file = ("hour_graph.html")
-    
-    
-    
     
     lossPlot = figure(
        tools="pan,box_zoom,reset,save",
@@ -34,7 +31,7 @@ def graphMerakiTraffic(networkId, serial):
     y0val = []
     y1val = []
     
-    for i in tdata:
+    for i in netdata: # loop through the traffic data and format it into bokeh plot structure
         xval.append(parser.parse(i["startTs"].replace("T"," ").strip("Z")))
         y0val.append(i["lossPercent"])
         y1val.append(i["latencyMs"])
