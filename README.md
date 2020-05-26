@@ -2,6 +2,7 @@
 Meraki automation via API
 
 Client Report will take inputs of Org ID and API key from Meraki and will generate a text file of the clients connected to each network in the org. 
+
     getNetworkIds will return the json output of the API call to retreive all network data from an org
         https://dashboard.meraki.com/api_docs/v0#list-the-networks-in-an-organization
     
@@ -9,6 +10,7 @@ Client Report will take inputs of Org ID and API key from Meraki and will genera
         https://dashboard.meraki.com/api_docs/v0#list-the-clients-that-have-used-this-network-in-the-timespan
         
 Wan Uplink Report will take inputs of Org ID and API key from Meraki and will generate an excel-formatted CSV of the network ID, name, public-facing IP and the DNS lookup data from the public IP.
+
     getNetworkIds will return the json output of the API call to retreive all network data from an org
         https://dashboard.meraki.com/api_docs/v0#list-the-networks-in-an-organization
     
